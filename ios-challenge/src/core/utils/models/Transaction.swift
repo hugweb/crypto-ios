@@ -58,6 +58,6 @@ extension Transaction {
             return nil
         }
         
-        return "\(String(describing: coinValueString)) \(symbol)"
+        return "\(String(describing: coinValueString))"
     }
 }

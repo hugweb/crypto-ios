@@ -23,7 +23,11 @@ class TransactionViewModel: ObservableObject {
     }
     
     var totalTransationsValue: String {
-        return "\(transactions.compactMap { $0.value }.reduce(0, +).formatted(.number.precision(.fractionLength(0)))) $"
+        let value = transactions.map { $0.value }.reduce(0, +)
+        guard value > 0 else {
+            return ""
+        }
+        return "\(value.formatted(.number.precision(.fractionLength(0)))) $"
     }
 }
 

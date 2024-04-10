@@ -17,23 +17,7 @@ struct TransactionList: View {
         NavigationStack {
             List {
                 ForEach(model.transactions, id: \.self) { transaction in
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text(transaction.date, style: .date)
-                            .font(.footnote)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(Color.black.opacity(0.9))
-                        HStack {
-                            Text(transaction.humanizeValue)
-                                .font(.footnote)
-                                .foregroundStyle(Color.black.opacity(0.7))
-                            Spacer()
-                            if let humanizePrice = transaction.humanizePrice {
-                                Text(humanizePrice)
-                                    .font(.footnote)
-                                    .foregroundStyle(Color.black.opacity(0.7))
-                            }
-                        }
-                    }
+                    TransactionListRow(transaction: transaction)
                 }
                 .onDelete { indexSet in
                     model.deleteTransaction(indexSet)
@@ -47,8 +31,12 @@ struct TransactionList: View {
                         .font(.title)
                 }
             }
+            
         }
         .task {
+            model.fetchTransactions()
+        }
+        .errorAlert(error: $model.error) {
             model.fetchTransactions()
         }
     }
