@@ -24,15 +24,22 @@ struct TransactionSheet: View {
             Text(LocalizedStringKey("Please enter the amount"))
                 .padding(.top, 20)
                 .foregroundStyle(Color.black.opacity(0.5))
-            TextField("...", value: $transaction.value, format: .number)
-                           .textFieldStyle(.roundedBorder)
-                           .multilineTextAlignment(.center)
-                           .padding(.leading, 100)
-                           .padding(.trailing, 100)
+            HStack(spacing: 0) {
+                TextField("...", value: $transaction.value, format: .number)
+                               .textFieldStyle(.roundedBorder)
+                               .multilineTextAlignment(.center)
+                               .padding(.leading, 10)
+                               .padding(.trailing, 10)
+                
+                Text("$")
+                Spacer()
+            }
+            .padding(.leading, 100)
+            .padding(.trailing, 100)
        
-            if let price = asset.currentPrice, let value = transaction.value, value > 0 {
+            if let price = asset.currentPrice, transaction.value > 0 {
                 HStack {
-                    Text("~\(value * price)")
+                    Text("~\(transaction.value / price)")
                         .font(.footnote)
                         .fontWeight(.semibold)
                         .foregroundStyle(Color.black.opacity(0.5))
@@ -45,9 +52,11 @@ struct TransactionSheet: View {
                     .frame(height: 30)
             }
             Divider()
+                .padding(.top, 10)
             Button(action: {
+                transaction.symbol = asset.symbol
                 transaction.date = Date.now
-                transaction.price = asset.priceUsd
+                transaction.price = asset.currentPrice ?? 0
                 onPurchase(transaction)
             }, label: {
                 Text(LocalizedStringKey("PURCHASE"))
@@ -55,11 +64,10 @@ struct TransactionSheet: View {
                     .padding(10)
                     .cornerRadius(5)
             })
-            .disabled(transaction.value ?? 0 <= 0)
+            .disabled(transaction.value <= 0)
 
             
         }
         .presentationDragIndicator(.hidden)
-        .presentationDetents([.height(250), .large])
     }
 }

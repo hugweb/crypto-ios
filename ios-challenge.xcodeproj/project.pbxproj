@@ -29,6 +29,8 @@
 		9A068FF02BC6C38E004D1338 /* AssetListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FEF2BC6C38E004D1338 /* AssetListRow.swift */; };
 		9A068FF42BC6CF1D004D1338 /* TransactionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FF32BC6CF1D004D1338 /* TransactionSheet.swift */; };
 		9A068FF62BC6D5B4004D1338 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FF52BC6D5B4004D1338 /* Transaction.swift */; };
+		9A068FF92BC6E8AF004D1338 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FF82BC6E8AF004D1338 /* DataSource.swift */; };
+		9A9BCC952BC7398F00695CE1 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BCC942BC7398F00695CE1 /* TransactionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		9A068FEF2BC6C38E004D1338 /* AssetListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListRow.swift; sourceTree = "<group>"; };
 		9A068FF32BC6CF1D004D1338 /* TransactionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSheet.swift; sourceTree = "<group>"; };
 		9A068FF52BC6D5B4004D1338 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		9A068FF82BC6E8AF004D1338 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		9A9BCC942BC7398F00695CE1 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,7 @@
 		06CF18722BC68D0100AB9081 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				9A068FF72BC6E8A5004D1338 /* datasource */,
 				9A068FE82BC6B960004D1338 /* errors */,
 				9A068FD52BC6A33E004D1338 /* api */,
 				9A068FD22BC6A014004D1338 /* models */,
@@ -282,8 +287,17 @@
 		9A068FF22BC6C3CD004D1338 /* transactions */ = {
 			isa = PBXGroup;
 			children = (
+				9A9BCC942BC7398F00695CE1 /* TransactionViewModel.swift */,
 			);
 			path = transactions;
+			sourceTree = "<group>";
+		};
+		9A068FF72BC6E8A5004D1338 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				9A068FF82BC6E8AF004D1338 /* DataSource.swift */,
+			);
+			path = datasource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,8 +440,10 @@
 				9A068FE52BC6AA76004D1338 /* AssetListModel.swift in Sources */,
 				9A068FE32BC6A9B3004D1338 /* AssetEndpoint.swift in Sources */,
 				9A068FDB2BC6A494004D1338 /* ApiEndpoint.swift in Sources */,
+				9A9BCC952BC7398F00695CE1 /* TransactionViewModel.swift in Sources */,
 				9A068FD42BC6A039004D1338 /* Asset.swift in Sources */,
 				9A068FEC2BC6BA27004D1338 /* AppErrorView.swift in Sources */,
+				9A068FF92BC6E8AF004D1338 /* DataSource.swift in Sources */,
 				9A068FEA2BC6B971004D1338 /* AppError.swift in Sources */,
 				9A068FEE2BC6BEC1004D1338 /* AssetService.swift in Sources */,
 				9A068FE72BC6B568004D1338 /* AssetResponse.swift in Sources */,

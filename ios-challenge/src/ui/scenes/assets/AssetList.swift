@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AssetList: View {
     
@@ -17,7 +18,7 @@ struct AssetList: View {
                 List(model.assets, id: \.self, selection: $model.selectedAsset) { asset in
                     AssetListRow(asset: asset)
                 }
-                .navigationTitle(LocalizedStringKey("Assets"))
+                .navigationTitle(LocalizedStringKey("Currencies"))
                 .animation(.spring(), value: model.assets)
             }
         }
@@ -25,14 +26,19 @@ struct AssetList: View {
             model.fetchAssets()
         }
         .sheet(isPresented: $model.purchaseSheet) {
+            model.selectedAsset = nil
+        } content: {
             if let asset = model.selectedAsset {
                 TransactionSheet(asset: asset) { transaction in
-                    print(transaction)
+                    model.purchaseSheet = false
+                    model.addTransaction(transaction)
                 }
             }
         }
         .onChange(of: model.selectedAsset) {
-            model.purchaseSheet.toggle()
+            if model.selectedAsset != nil {
+                model.purchaseSheet.toggle()
+            }
         }
         .errorAlert(error: $model.error) {
             model.fetchAssets()
@@ -41,8 +47,17 @@ struct AssetList: View {
 }
 
 #Preview {
+    let schema = Schema([
+        Asset.self,
+        Transaction.self
+    ])
+    
+    let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+    let container = try! ModelContainer(for: schema, configurations: [modelConfiguration])
     let manager = ApiManager()
     let assetService = AssetService(manager: manager)
-    let assetModel = AssetListModel(service: assetService)
+    let assetModel = AssetListModel(service: assetService, context: container.mainContext)
     return AssetList(model: assetModel)
+        .modelContainer(container)
 }
+

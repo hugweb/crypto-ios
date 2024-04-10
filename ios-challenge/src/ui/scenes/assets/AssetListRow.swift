@@ -16,6 +16,7 @@ struct AssetListRow: View {
             HStack(alignment: .center) {
                 VStack(alignment: .leading) {
                     Text(asset.name)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         .foregroundStyle(Color.black.opacity(0.9))
                     Text(asset.symbol)
                         .foregroundStyle(Color.black.opacity(0.5))

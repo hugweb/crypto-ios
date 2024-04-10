@@ -9,18 +9,29 @@ import SwiftUI
 
 enum AppError: LocalizedError {
     case failedFetchingAssets
+    case failedFetchingTransactions
+    case failedSavingTransaction
+    case failedDeletingTransaction
   
     var errorDescription: String? {
         switch self {
         case .failedFetchingAssets:
-            return "Assets Error"
+            return "Assets"
+        case .failedSavingTransaction, .failedFetchingTransactions, .failedDeletingTransaction:
+            return "Transaction"
         }
     }
     
     var recoverySuggestion: String? {
         switch self {
         case .failedFetchingAssets:
-            return "Sorry, we couldn't retrieve assets. \n Try again later. ☹️"
+            return "Sorry, we couldn't retrieve your assets. \n\n Try again later. ☹️"
+        case .failedFetchingTransactions:
+            return "Sorry, we couldn't retrieve your transactions. \n\n Try again later. ☹️"
+        case .failedSavingTransaction:
+            return "Sorry, we couldn't save your transaction. \n\n Try again later. ☹️"
+        case .failedDeletingTransaction:
+            return "Sorry, we couldn't delete your transaction. \n\n Try again later. ☹️"
         }
     }
 }

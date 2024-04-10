@@ -14,11 +14,14 @@ enum Tab: String {
 
 struct AppView: View {
 
+    @Environment(\.modelContext) private var context
+    
     var body: some View {
         
         let manager = ApiManager()
         let assetService = AssetService(manager: manager)
-        let assetModel = AssetListModel(service: assetService)
+        let assetModel = AssetListModel(service: assetService, context: context)
+        let transationModel = TransactionViewModel(context: context)
         
         TabView {
             AssetList(model: assetModel)
@@ -27,7 +30,7 @@ struct AppView: View {
                     Label("Assets", systemImage: "bitcoinsign")
                 }
             
-            TransactionList()
+            TransactionList(model: transationModel)
                 .tag(Tab.transactions)
                 .tabItem {
                     Label("Transactions", systemImage: "list.dash")
