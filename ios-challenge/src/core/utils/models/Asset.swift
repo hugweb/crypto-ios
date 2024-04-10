@@ -11,28 +11,28 @@ import SwiftData
 class Asset: Identifiable, Codable {
     @Attribute(.unique)
     var id: String
-    var rank: Int
+    var rank: String
     var symbol: String
     var name: String
-    var supply: Double
-    var maxSupply: Double
-    var marketCapUsd: Double
-    var volumeUsd24Hr: Double
-    var priceUsd: Double
-    var changePercent24Hr: Double
-    var vwap24Hr: Double
+    var supply: String
+    var maxSupply: String
+    var marketCapUsd: String
+    var volumeUsd24Hr: String
+    var priceUsd: String
+    var changePercent24Hr: String
+    var vwap24Hr: String
     
     init(id: String, 
-         rank: Int,
+         rank: String,
          symbol: String,
          name: String, 
-         supply: Double,
-         maxSupply: Double,
-         marketCapUsd: Double,
-         volumeUsd24Hr: Double,
-         priceUsd: Double,
-         changePercent24Hr: Double,
-         vwap24Hr: Double) {
+         supply: String,
+         maxSupply: String,
+         marketCapUsd: String,
+         volumeUsd24Hr: String,
+         priceUsd: String,
+         changePercent24Hr: String,
+         vwap24Hr: String) {
         self.id = id
         self.rank = rank
         self.symbol = symbol
@@ -52,17 +52,17 @@ class Asset: Identifiable, Codable {
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decode(String.self, forKey: .id)
-        self.rank = try container.decodeIfPresent(Int.self, forKey: .rank) ?? 0
+        self.id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
+        self.rank = try container.decodeIfPresent(String.self, forKey: .rank) ?? ""
         self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         self.symbol = try container.decodeIfPresent(String.self, forKey: .symbol) ?? ""
-        self.supply = try container.decodeIfPresent(Double.self, forKey: .supply) ?? 0.0
-        self.maxSupply = try container.decodeIfPresent(Double.self, forKey: .supply) ?? 0.0
-        self.marketCapUsd = try container.decodeIfPresent(Double.self, forKey: .supply)  ?? 0.0
-        self.volumeUsd24Hr = try container.decodeIfPresent(Double.self, forKey: .supply)  ?? 0.0
-        self.priceUsd = try container.decodeIfPresent(Double.self, forKey: .supply)  ?? 0.0
-        self.changePercent24Hr = try container.decodeIfPresent(Double.self, forKey: .supply)  ?? 0.0
-        self.vwap24Hr = try container.decodeIfPresent(Double.self, forKey: .supply) ?? 0.0
+        self.supply = try container.decodeIfPresent(String.self, forKey: .supply) ?? ""
+        self.maxSupply = try container.decodeIfPresent(String.self, forKey: .maxSupply) ?? ""
+        self.marketCapUsd = try container.decodeIfPresent(String.self, forKey: .marketCapUsd) ?? ""
+        self.volumeUsd24Hr = try container.decodeIfPresent(String.self, forKey: .volumeUsd24Hr) ?? ""
+        self.priceUsd = try container.decodeIfPresent(String.self, forKey: .priceUsd) ?? ""
+        self.changePercent24Hr = try container.decodeIfPresent(String.self, forKey: .changePercent24Hr) ?? ""
+        self.vwap24Hr = try container.decodeIfPresent(String.self, forKey: .vwap24Hr) ?? ""
     }
     
     func encode(to encoder: Encoder) throws {

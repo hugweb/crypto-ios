@@ -6,12 +6,27 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct iOSApp: App {
+    
+    var sharedModelContainer: ModelContainer = {
+        do {
+            let schema = Schema([
+                Asset.self,
+            ])
+            let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+        } catch {
+            fatalError("Could not create ModelContainer: \(error)")
+        }
+    }()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppView()
+                .modelContainer(sharedModelContainer)
         }
     }
 }

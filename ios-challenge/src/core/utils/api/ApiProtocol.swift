@@ -8,9 +8,9 @@
 import Foundation
 
 protocol ApiProtocol {
-    var networkManager: ApiManager { get set }
+    var manager: ApiManager { get set }
 }
 
 protocol ApiManagerProtocol {
-    func request<T: Decodable>(_ endpoint: ApiEndpoint) async -> Result<T, ApiError>
+    func request<T: Codable>(_ endpoint: ApiEndpoint) async -> Result<T, ApiError>
 }

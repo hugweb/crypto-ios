@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  AppView.swift
 //  ios-challenge
 //
 //  Created by Marc Flores on 10/4/24.
@@ -12,10 +12,16 @@ enum Tab: String {
     case transactions
 }
 
-struct ContentView: View {
+struct AppView: View {
+        
     var body: some View {
+        
+        let manager = ApiManager()
+        let assetService = AssetService(manager: manager)
+        let assetModel = AssetListModel(service: assetService)
+        
         TabView {
-            AssetList()
+            AssetList(model: assetModel)
                 .tag(Tab.assets)
                 .tabItem {
                     Label("Assets", systemImage: "bitcoinsign")
@@ -31,5 +37,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    AppView()
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		06CF183F2BC68C4D00AB9081 /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF183E2BC68C4D00AB9081 /* iOSApp.swift */; };
-		06CF18412BC68C4D00AB9081 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF18402BC68C4D00AB9081 /* ContentView.swift */; };
+		06CF18412BC68C4D00AB9081 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF18402BC68C4D00AB9081 /* AppView.swift */; };
 		06CF18432BC68C4E00AB9081 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06CF18422BC68C4E00AB9081 /* Assets.xcassets */; };
 		06CF18472BC68C4E00AB9081 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06CF18462BC68C4E00AB9081 /* Preview Assets.xcassets */; };
 		06CF18512BC68C4E00AB9081 /* ios_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF18502BC68C4E00AB9081 /* ios_challengeTests.swift */; };
@@ -20,6 +20,12 @@
 		9A068FDB2BC6A494004D1338 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FDA2BC6A494004D1338 /* ApiEndpoint.swift */; };
 		9A068FDF2BC6A822004D1338 /* AssetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FDE2BC6A822004D1338 /* AssetList.swift */; };
 		9A068FE12BC6A82B004D1338 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FE02BC6A82B004D1338 /* TransactionList.swift */; };
+		9A068FE32BC6A9B3004D1338 /* AssetEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FE22BC6A9B3004D1338 /* AssetEndpoint.swift */; };
+		9A068FE52BC6AA76004D1338 /* AssetListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FE42BC6AA76004D1338 /* AssetListModel.swift */; };
+		9A068FE72BC6B568004D1338 /* AssetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FE62BC6B568004D1338 /* AssetResponse.swift */; };
+		9A068FEA2BC6B971004D1338 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FE92BC6B971004D1338 /* AppError.swift */; };
+		9A068FEC2BC6BA27004D1338 /* AppErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FEB2BC6BA27004D1338 /* AppErrorView.swift */; };
+		9A068FEE2BC6BEC1004D1338 /* AssetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FED2BC6BEC1004D1338 /* AssetService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +48,7 @@
 /* Begin PBXFileReference section */
 		06CF183B2BC68C4D00AB9081 /* ios-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06CF183E2BC68C4D00AB9081 /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
-		06CF18402BC68C4D00AB9081 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		06CF18402BC68C4D00AB9081 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		06CF18422BC68C4E00AB9081 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06CF18442BC68C4E00AB9081 /* ios_challenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ios_challenge.entitlements; sourceTree = "<group>"; };
 		06CF18462BC68C4E00AB9081 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -57,6 +63,12 @@
 		9A068FDA2BC6A494004D1338 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
 		9A068FDE2BC6A822004D1338 /* AssetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetList.swift; sourceTree = "<group>"; };
 		9A068FE02BC6A82B004D1338 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
+		9A068FE22BC6A9B3004D1338 /* AssetEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetEndpoint.swift; sourceTree = "<group>"; };
+		9A068FE42BC6AA76004D1338 /* AssetListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListModel.swift; sourceTree = "<group>"; };
+		9A068FE62BC6B568004D1338 /* AssetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetResponse.swift; sourceTree = "<group>"; };
+		9A068FE92BC6B971004D1338 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		9A068FEB2BC6BA27004D1338 /* AppErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorView.swift; sourceTree = "<group>"; };
+		9A068FED2BC6BEC1004D1338 /* AssetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +196,7 @@
 		06CF18722BC68D0100AB9081 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				9A068FE82BC6B960004D1338 /* errors */,
 				9A068FD52BC6A33E004D1338 /* api */,
 				9A068FD22BC6A014004D1338 /* models */,
 				06CF18732BC68D0600AB9081 /* app */,
@@ -195,7 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				06CF183E2BC68C4D00AB9081 /* iOSApp.swift */,
-				06CF18402BC68C4D00AB9081 /* ContentView.swift */,
+				06CF18402BC68C4D00AB9081 /* AppView.swift */,
 				06CF18442BC68C4E00AB9081 /* ios_challenge.entitlements */,
 			);
 			path = app;
@@ -205,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				9A068FD32BC6A039004D1338 /* Asset.swift */,
+				9A068FE62BC6B568004D1338 /* AssetResponse.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -223,6 +237,9 @@
 			isa = PBXGroup;
 			children = (
 				9A068FDE2BC6A822004D1338 /* AssetList.swift */,
+				9A068FE22BC6A9B3004D1338 /* AssetEndpoint.swift */,
+				9A068FE42BC6AA76004D1338 /* AssetListModel.swift */,
+				9A068FED2BC6BEC1004D1338 /* AssetService.swift */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -233,6 +250,15 @@
 				9A068FE02BC6A82B004D1338 /* TransactionList.swift */,
 			);
 			path = transactions;
+			sourceTree = "<group>";
+		};
+		9A068FE82BC6B960004D1338 /* errors */ = {
+			isa = PBXGroup;
+			children = (
+				9A068FE92BC6B971004D1338 /* AppError.swift */,
+				9A068FEB2BC6BA27004D1338 /* AppErrorView.swift */,
+			);
+			path = errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,12 +391,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06CF18412BC68C4D00AB9081 /* ContentView.swift in Sources */,
+				06CF18412BC68C4D00AB9081 /* AppView.swift in Sources */,
 				9A068FE12BC6A82B004D1338 /* TransactionList.swift in Sources */,
 				06CF183F2BC68C4D00AB9081 /* iOSApp.swift in Sources */,
 				9A068FD72BC6A377004D1338 /* ApiProtocol.swift in Sources */,
+				9A068FE52BC6AA76004D1338 /* AssetListModel.swift in Sources */,
+				9A068FE32BC6A9B3004D1338 /* AssetEndpoint.swift in Sources */,
 				9A068FDB2BC6A494004D1338 /* ApiEndpoint.swift in Sources */,
 				9A068FD42BC6A039004D1338 /* Asset.swift in Sources */,
+				9A068FEC2BC6BA27004D1338 /* AppErrorView.swift in Sources */,
+				9A068FEA2BC6B971004D1338 /* AppError.swift in Sources */,
+				9A068FEE2BC6BEC1004D1338 /* AssetService.swift in Sources */,
+				9A068FE72BC6B568004D1338 /* AssetResponse.swift in Sources */,
 				9A068FD92BC6A41E004D1338 /* ApiManager.swift in Sources */,
 				9A068FDF2BC6A822004D1338 /* AssetList.swift in Sources */,
 			);
