@@ -26,6 +26,9 @@
 		9A068FEA2BC6B971004D1338 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FE92BC6B971004D1338 /* AppError.swift */; };
 		9A068FEC2BC6BA27004D1338 /* AppErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FEB2BC6BA27004D1338 /* AppErrorView.swift */; };
 		9A068FEE2BC6BEC1004D1338 /* AssetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FED2BC6BEC1004D1338 /* AssetService.swift */; };
+		9A068FF02BC6C38E004D1338 /* AssetListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FEF2BC6C38E004D1338 /* AssetListRow.swift */; };
+		9A068FF42BC6CF1D004D1338 /* TransactionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FF32BC6CF1D004D1338 /* TransactionSheet.swift */; };
+		9A068FF62BC6D5B4004D1338 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FF52BC6D5B4004D1338 /* Transaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		9A068FE92BC6B971004D1338 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		9A068FEB2BC6BA27004D1338 /* AppErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorView.swift; sourceTree = "<group>"; };
 		9A068FED2BC6BEC1004D1338 /* AssetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetService.swift; sourceTree = "<group>"; };
+		9A068FEF2BC6C38E004D1338 /* AssetListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListRow.swift; sourceTree = "<group>"; };
+		9A068FF32BC6CF1D004D1338 /* TransactionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSheet.swift; sourceTree = "<group>"; };
+		9A068FF52BC6D5B4004D1338 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +213,8 @@
 		06CF18732BC68D0600AB9081 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				9A068FF22BC6C3CD004D1338 /* transactions */,
+				9A068FF12BC6C3C6004D1338 /* assets */,
 				06CF183E2BC68C4D00AB9081 /* iOSApp.swift */,
 				06CF18402BC68C4D00AB9081 /* AppView.swift */,
 				06CF18442BC68C4E00AB9081 /* ios_challenge.entitlements */,
@@ -219,6 +227,7 @@
 			children = (
 				9A068FD32BC6A039004D1338 /* Asset.swift */,
 				9A068FE62BC6B568004D1338 /* AssetResponse.swift */,
+				9A068FF52BC6D5B4004D1338 /* Transaction.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -237,9 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				9A068FDE2BC6A822004D1338 /* AssetList.swift */,
-				9A068FE22BC6A9B3004D1338 /* AssetEndpoint.swift */,
-				9A068FE42BC6AA76004D1338 /* AssetListModel.swift */,
-				9A068FED2BC6BEC1004D1338 /* AssetService.swift */,
+				9A068FEF2BC6C38E004D1338 /* AssetListRow.swift */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -248,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				9A068FE02BC6A82B004D1338 /* TransactionList.swift */,
+				9A068FF32BC6CF1D004D1338 /* TransactionSheet.swift */,
 			);
 			path = transactions;
 			sourceTree = "<group>";
@@ -259,6 +267,23 @@
 				9A068FEB2BC6BA27004D1338 /* AppErrorView.swift */,
 			);
 			path = errors;
+			sourceTree = "<group>";
+		};
+		9A068FF12BC6C3C6004D1338 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				9A068FE22BC6A9B3004D1338 /* AssetEndpoint.swift */,
+				9A068FE42BC6AA76004D1338 /* AssetListModel.swift */,
+				9A068FED2BC6BEC1004D1338 /* AssetService.swift */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		9A068FF22BC6C3CD004D1338 /* transactions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = transactions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,9 +417,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				06CF18412BC68C4D00AB9081 /* AppView.swift in Sources */,
+				9A068FF02BC6C38E004D1338 /* AssetListRow.swift in Sources */,
 				9A068FE12BC6A82B004D1338 /* TransactionList.swift in Sources */,
 				06CF183F2BC68C4D00AB9081 /* iOSApp.swift in Sources */,
+				9A068FF42BC6CF1D004D1338 /* TransactionSheet.swift in Sources */,
 				9A068FD72BC6A377004D1338 /* ApiProtocol.swift in Sources */,
+				9A068FF62BC6D5B4004D1338 /* Transaction.swift in Sources */,
 				9A068FE52BC6AA76004D1338 /* AssetListModel.swift in Sources */,
 				9A068FE32BC6A9B3004D1338 /* AssetEndpoint.swift in Sources */,
 				9A068FDB2BC6A494004D1338 /* ApiEndpoint.swift in Sources */,

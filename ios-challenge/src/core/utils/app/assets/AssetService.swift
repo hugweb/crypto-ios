@@ -17,7 +17,12 @@ struct AssetService: AssetServiceProtocol {
     var manager: ApiManager
     
     func getAssets() async throws -> [Asset] {
-        let results: Result<AssetResponse, ApiError> = await manager.request(AssetEndpoint.assets)
-        return try results.get().data
+        let result: Result<AssetResponse, ApiError> = await manager.request(AssetEndpoint.assets)
+        switch result {
+        case .success(let response):
+            return response.data
+        case .failure:
+            throw ApiError.notResults
+        }
     }
 }

@@ -12,6 +12,8 @@ class AssetListModel: ObservableObject {
     
     @Published var assets = [Asset]()
     @Published var error: AppError? = nil
+    @Published var purchaseSheet = false
+    @Published var selectedAsset: Asset?
     
     private let service: AssetServiceProtocol
     

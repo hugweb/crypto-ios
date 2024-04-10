@@ -15,8 +15,11 @@ struct iOSApp: App {
         do {
             let schema = Schema([
                 Asset.self,
+                Transaction.self
             ])
+            
             let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+            
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
         } catch {
             fatalError("Could not create ModelContainer: \(error)")

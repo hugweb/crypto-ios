@@ -10,15 +10,12 @@ import SwiftUI
 struct AssetList: View {
     
     @StateObject var model: AssetListModel
-    @State var showAlert = false
     
     var body: some View {
         NavigationStack {
             ZStack {
-                List {
-                    ForEach(model.assets) { asset in
-                        Text(asset.name)
-                    }
+                List(model.assets, id: \.self, selection: $model.selectedAsset) { asset in
+                    AssetListRow(asset: asset)
                 }
                 .navigationTitle(LocalizedStringKey("Assets"))
                 .animation(.spring(), value: model.assets)
@@ -27,8 +24,25 @@ struct AssetList: View {
         .task {
             model.fetchAssets()
         }
+        .sheet(isPresented: $model.purchaseSheet) {
+            if let asset = model.selectedAsset {
+                TransactionSheet(asset: asset) { transaction in
+                    print(transaction)
+                }
+            }
+        }
+        .onChange(of: model.selectedAsset) {
+            model.purchaseSheet.toggle()
+        }
         .errorAlert(error: $model.error) {
             model.fetchAssets()
         }
     }
+}
+
+#Preview {
+    let manager = ApiManager()
+    let assetService = AssetService(manager: manager)
+    let assetModel = AssetListModel(service: assetService)
+    return AssetList(model: assetModel)
 }

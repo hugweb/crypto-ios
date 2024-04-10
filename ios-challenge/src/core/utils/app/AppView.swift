@@ -13,7 +13,7 @@ enum Tab: String {
 }
 
 struct AppView: View {
-        
+
     var body: some View {
         
         let manager = ApiManager()

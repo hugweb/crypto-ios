@@ -4,7 +4,7 @@
 //
 //  Created by Hugues Blocher on 10/4/24.
 //
-
+import Foundation
 import SwiftData
 
 @Model
@@ -78,5 +78,22 @@ class Asset: Identifiable, Codable {
         try container.encode(priceUsd, forKey: .priceUsd)
         try container.encode(changePercent24Hr, forKey: .changePercent24Hr)
         try container.encode(vwap24Hr, forKey: .vwap24Hr)
+    }
+}
+
+extension Asset {
+    
+    var bullish: Bool {
+        return !changePercent24Hr.hasPrefix("-")
+    }
+    
+    var percentage24h: String {
+        let formatter = NumberFormatter()
+        let double = formatter.number(from: changePercent24Hr)
+        return double?.doubleValue.formatted(.number.precision(.fractionLength(0...2))) ?? ""
+    }
+    
+    var currentPrice: Double? {
+        return Double(priceUsd)
     }
 }
