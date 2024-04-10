@@ -14,11 +14,12 @@
 		06CF18512BC68C4E00AB9081 /* ios_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF18502BC68C4E00AB9081 /* ios_challengeTests.swift */; };
 		06CF185B2BC68C4E00AB9081 /* ios_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF185A2BC68C4E00AB9081 /* ios_challengeUITests.swift */; };
 		06CF185D2BC68C4E00AB9081 /* ios_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF185C2BC68C4E00AB9081 /* ios_challengeUITestsLaunchTests.swift */; };
-		06CF18702BC68CB200AB9081 /* MainSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF186F2BC68CB200AB9081 /* MainSceneView.swift */; };
 		9A068FD42BC6A039004D1338 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FD32BC6A039004D1338 /* Asset.swift */; };
 		9A068FD72BC6A377004D1338 /* ApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FD62BC6A377004D1338 /* ApiProtocol.swift */; };
 		9A068FD92BC6A41E004D1338 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FD82BC6A41E004D1338 /* ApiManager.swift */; };
 		9A068FDB2BC6A494004D1338 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FDA2BC6A494004D1338 /* ApiEndpoint.swift */; };
+		9A068FDF2BC6A822004D1338 /* AssetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FDE2BC6A822004D1338 /* AssetList.swift */; };
+		9A068FE12BC6A82B004D1338 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FE02BC6A82B004D1338 /* TransactionList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,11 +51,12 @@
 		06CF18562BC68C4E00AB9081 /* ios-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06CF185A2BC68C4E00AB9081 /* ios_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_challengeUITests.swift; sourceTree = "<group>"; };
 		06CF185C2BC68C4E00AB9081 /* ios_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		06CF186F2BC68CB200AB9081 /* MainSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneView.swift; sourceTree = "<group>"; };
 		9A068FD32BC6A039004D1338 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		9A068FD62BC6A377004D1338 /* ApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProtocol.swift; sourceTree = "<group>"; };
 		9A068FD82BC6A41E004D1338 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		9A068FDA2BC6A494004D1338 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
+		9A068FDE2BC6A822004D1338 /* AssetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetList.swift; sourceTree = "<group>"; };
+		9A068FE02BC6A82B004D1338 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,17 +167,10 @@
 		06CF186C2BC68C8C00AB9081 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
-				06CF186E2BC68CA400AB9081 /* main */,
+				9A068FDD2BC6A80B004D1338 /* transactions */,
+				9A068FDC2BC6A803004D1338 /* assets */,
 			);
 			path = scenes;
-			sourceTree = "<group>";
-		};
-		06CF186E2BC68CA400AB9081 /* main */ = {
-			isa = PBXGroup;
-			children = (
-				06CF186F2BC68CB200AB9081 /* MainSceneView.swift */,
-			);
-			path = main;
 			sourceTree = "<group>";
 		};
 		06CF18712BC68CD800AB9081 /* core */ = {
@@ -222,6 +217,22 @@
 				9A068FDA2BC6A494004D1338 /* ApiEndpoint.swift */,
 			);
 			path = api;
+			sourceTree = "<group>";
+		};
+		9A068FDC2BC6A803004D1338 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				9A068FDE2BC6A822004D1338 /* AssetList.swift */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		9A068FDD2BC6A80B004D1338 /* transactions */ = {
+			isa = PBXGroup;
+			children = (
+				9A068FE02BC6A82B004D1338 /* TransactionList.swift */,
+			);
+			path = transactions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,12 +366,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				06CF18412BC68C4D00AB9081 /* ContentView.swift in Sources */,
+				9A068FE12BC6A82B004D1338 /* TransactionList.swift in Sources */,
 				06CF183F2BC68C4D00AB9081 /* iOSApp.swift in Sources */,
 				9A068FD72BC6A377004D1338 /* ApiProtocol.swift in Sources */,
 				9A068FDB2BC6A494004D1338 /* ApiEndpoint.swift in Sources */,
 				9A068FD42BC6A039004D1338 /* Asset.swift in Sources */,
 				9A068FD92BC6A41E004D1338 /* ApiManager.swift in Sources */,
-				06CF18702BC68CB200AB9081 /* MainSceneView.swift in Sources */,
+				9A068FDF2BC6A822004D1338 /* AssetList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

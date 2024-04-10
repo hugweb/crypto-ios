@@ -7,9 +7,26 @@
 
 import SwiftUI
 
+enum Tab: String {
+    case assets
+    case transactions
+}
+
 struct ContentView: View {
     var body: some View {
-        MainSceneView()
+        TabView {
+            AssetList()
+                .tag(Tab.assets)
+                .tabItem {
+                    Label("Assets", systemImage: "bitcoinsign")
+                }
+            
+            TransactionList()
+                .tag(Tab.transactions)
+                .tabItem {
+                    Label("Transactions", systemImage: "list.dash")
+                }
+        }
     }
 }
 
