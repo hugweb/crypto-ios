@@ -10,7 +10,7 @@ import SwiftData
 
 @MainActor
 class TransactionViewModel: ObservableObject {
-        
+    
     @Published var transactions = [Transaction]()
     @Published var error: AppError? = nil
     
@@ -21,6 +21,10 @@ class TransactionViewModel: ObservableObject {
         self.context = context
         self.dataSource = DataSource<Transaction>(container: context.container)
     }
+}
+
+// MARK: Properties
+extension TransactionViewModel {
     
     var totalTransationsValue: String {
         let value = transactions.map { $0.value }.reduce(0, +)
@@ -31,6 +35,7 @@ class TransactionViewModel: ObservableObject {
     }
 }
 
+// MARK: Datasource
 extension TransactionViewModel {
     
     func fetchTransactions() {

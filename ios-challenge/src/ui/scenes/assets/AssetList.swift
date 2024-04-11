@@ -10,20 +10,39 @@ import SwiftData
 
 struct AssetList: View {
     
+    @EnvironmentObject var state: AppState
     @StateObject var model: AssetListModel
     
     var body: some View {
         NavigationStack {
-            ZStack {
-                List(model.assets, id: \.self, selection: $model.selectedAsset) { asset in
-                    AssetListRow(asset: asset)
-                }
-                .navigationTitle(LocalizedStringKey("Currencies"))
-                .animation(.spring(), value: model.assets)
+            List(model.assets, id: \.self, selection: $model.selectedAsset) { asset in
+                AssetListRow(asset: asset)
             }
-        }
-        .task {
-            model.fetchAssets()
+            .navigationTitle(LocalizedStringKey("Currencies"))
+            .animation(.spring(), value: model.assets)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    if model.loading {
+                        ProgressView()
+                    } else {
+                        Picker(LocalizedStringKey("Currency", selection: $state.currency) {
+                            ForEach(Currency.allCases) { currency in
+                                Image(systemName: currency.description)
+                                    .resizable()
+                                    .scaledToFit()
+                            }
+                        }
+                    }
+                }
+            }
+            .onChange(of: model.selectedAsset) {
+                if model.selectedAsset != nil {
+                    model.purchaseSheet.toggle()
+                }
+            }
+            .task {
+                model.fetchAssets()
+            }
         }
         .sheet(isPresented: $model.purchaseSheet) {
             model.selectedAsset = nil
@@ -33,11 +52,6 @@ struct AssetList: View {
                     model.purchaseSheet = false
                     model.addTransaction(transaction)
                 }
-            }
-        }
-        .onChange(of: model.selectedAsset) {
-            if model.selectedAsset != nil {
-                model.purchaseSheet.toggle()
             }
         }
         .errorAlert(error: $model.error) {

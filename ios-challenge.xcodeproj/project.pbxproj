@@ -24,7 +24,6 @@
 		9A068FE52BC6AA76004D1338 /* AssetListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FE42BC6AA76004D1338 /* AssetListModel.swift */; };
 		9A068FE72BC6B568004D1338 /* AssetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FE62BC6B568004D1338 /* AssetResponse.swift */; };
 		9A068FEA2BC6B971004D1338 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FE92BC6B971004D1338 /* AppError.swift */; };
-		9A068FEC2BC6BA27004D1338 /* AppErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FEB2BC6BA27004D1338 /* AppErrorView.swift */; };
 		9A068FEE2BC6BEC1004D1338 /* AssetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FED2BC6BEC1004D1338 /* AssetService.swift */; };
 		9A068FF02BC6C38E004D1338 /* AssetListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FEF2BC6C38E004D1338 /* AssetListRow.swift */; };
 		9A068FF42BC6CF1D004D1338 /* TransactionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FF32BC6CF1D004D1338 /* TransactionSheet.swift */; };
@@ -32,6 +31,10 @@
 		9A068FF92BC6E8AF004D1338 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FF82BC6E8AF004D1338 /* DataSource.swift */; };
 		9A9BCC952BC7398F00695CE1 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BCC942BC7398F00695CE1 /* TransactionViewModel.swift */; };
 		9A9BCC972BC7515B00695CE1 /* TransactionListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BCC962BC7515B00695CE1 /* TransactionListRow.swift */; };
+		9A9BCC992BC7E4D300695CE1 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BCC982BC7E4D300695CE1 /* Currency.swift */; };
+		9A9BCC9B2BC7E58300695CE1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BCC9A2BC7E58300695CE1 /* AppState.swift */; };
+		9A9BCC9E2BC7EDD700695CE1 /* PriceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BCC9D2BC7EDD700695CE1 /* PriceFormatter.swift */; };
+		9A9BCCA02BC7F44F00695CE1 /* TransactionFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BCC9F2BC7F44F00695CE1 /* TransactionFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +76,6 @@
 		9A068FE42BC6AA76004D1338 /* AssetListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListModel.swift; sourceTree = "<group>"; };
 		9A068FE62BC6B568004D1338 /* AssetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetResponse.swift; sourceTree = "<group>"; };
 		9A068FE92BC6B971004D1338 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
-		9A068FEB2BC6BA27004D1338 /* AppErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorView.swift; sourceTree = "<group>"; };
 		9A068FED2BC6BEC1004D1338 /* AssetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetService.swift; sourceTree = "<group>"; };
 		9A068FEF2BC6C38E004D1338 /* AssetListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListRow.swift; sourceTree = "<group>"; };
 		9A068FF32BC6CF1D004D1338 /* TransactionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSheet.swift; sourceTree = "<group>"; };
@@ -81,6 +83,10 @@
 		9A068FF82BC6E8AF004D1338 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		9A9BCC942BC7398F00695CE1 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 		9A9BCC962BC7515B00695CE1 /* TransactionListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListRow.swift; sourceTree = "<group>"; };
+		9A9BCC982BC7E4D300695CE1 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		9A9BCC9A2BC7E58300695CE1 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		9A9BCC9D2BC7EDD700695CE1 /* PriceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFormatter.swift; sourceTree = "<group>"; };
+		9A9BCC9F2BC7F44F00695CE1 /* TransactionFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +214,7 @@
 		06CF18722BC68D0100AB9081 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				9A9BCC9C2BC7EDCB00695CE1 /* helpers */,
 				9A068FF72BC6E8A5004D1338 /* datasource */,
 				9A068FE82BC6B960004D1338 /* errors */,
 				9A068FD52BC6A33E004D1338 /* api */,
@@ -235,6 +242,8 @@
 				9A068FD32BC6A039004D1338 /* Asset.swift */,
 				9A068FE62BC6B568004D1338 /* AssetResponse.swift */,
 				9A068FF52BC6D5B4004D1338 /* Transaction.swift */,
+				9A9BCC982BC7E4D300695CE1 /* Currency.swift */,
+				9A9BCC9A2BC7E58300695CE1 /* AppState.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -272,7 +281,6 @@
 			isa = PBXGroup;
 			children = (
 				9A068FE92BC6B971004D1338 /* AppError.swift */,
-				9A068FEB2BC6BA27004D1338 /* AppErrorView.swift */,
 			);
 			path = errors;
 			sourceTree = "<group>";
@@ -301,6 +309,15 @@
 				9A068FF82BC6E8AF004D1338 /* DataSource.swift */,
 			);
 			path = datasource;
+			sourceTree = "<group>";
+		};
+		9A9BCC9C2BC7EDCB00695CE1 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9A9BCC9D2BC7EDD700695CE1 /* PriceFormatter.swift */,
+				9A9BCC9F2BC7F44F00695CE1 /* TransactionFormatter.swift */,
+			);
+			path = helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,20 +453,23 @@
 				06CF18412BC68C4D00AB9081 /* AppView.swift in Sources */,
 				9A068FF02BC6C38E004D1338 /* AssetListRow.swift in Sources */,
 				9A068FE12BC6A82B004D1338 /* TransactionList.swift in Sources */,
+				9A9BCC9E2BC7EDD700695CE1 /* PriceFormatter.swift in Sources */,
 				06CF183F2BC68C4D00AB9081 /* iOSApp.swift in Sources */,
 				9A068FF42BC6CF1D004D1338 /* TransactionSheet.swift in Sources */,
 				9A068FD72BC6A377004D1338 /* ApiProtocol.swift in Sources */,
 				9A068FF62BC6D5B4004D1338 /* Transaction.swift in Sources */,
 				9A068FE52BC6AA76004D1338 /* AssetListModel.swift in Sources */,
 				9A068FE32BC6A9B3004D1338 /* AssetEndpoint.swift in Sources */,
+				9A9BCC9B2BC7E58300695CE1 /* AppState.swift in Sources */,
 				9A068FDB2BC6A494004D1338 /* ApiEndpoint.swift in Sources */,
 				9A9BCC952BC7398F00695CE1 /* TransactionViewModel.swift in Sources */,
 				9A068FD42BC6A039004D1338 /* Asset.swift in Sources */,
-				9A068FEC2BC6BA27004D1338 /* AppErrorView.swift in Sources */,
 				9A9BCC972BC7515B00695CE1 /* TransactionListRow.swift in Sources */,
 				9A068FF92BC6E8AF004D1338 /* DataSource.swift in Sources */,
 				9A068FEA2BC6B971004D1338 /* AppError.swift in Sources */,
+				9A9BCCA02BC7F44F00695CE1 /* TransactionFormatter.swift in Sources */,
 				9A068FEE2BC6BEC1004D1338 /* AssetService.swift in Sources */,
+				9A9BCC992BC7E4D300695CE1 /* Currency.swift in Sources */,
 				9A068FE72BC6B568004D1338 /* AssetResponse.swift in Sources */,
 				9A068FD92BC6A41E004D1338 /* ApiManager.swift in Sources */,
 				9A068FDF2BC6A822004D1338 /* AssetList.swift in Sources */,

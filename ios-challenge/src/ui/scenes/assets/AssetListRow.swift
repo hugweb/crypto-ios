@@ -9,7 +9,13 @@ import SwiftUI
 
 struct AssetListRow: View {
     
+    @EnvironmentObject var state: AppState
+    
     let asset: Asset
+    
+    private var formatter: PriceFormatter {
+        return PriceFormatter(object: asset)
+    }
     
     var body: some View {
         VStack {
@@ -23,7 +29,7 @@ struct AssetListRow: View {
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Text("$\(asset.priceUsd)")
+                    Text(formatter.price(for: state.currency))
                         .foregroundStyle(Color.black.opacity(0.7))
                         .font(.footnote)
                     HStack {

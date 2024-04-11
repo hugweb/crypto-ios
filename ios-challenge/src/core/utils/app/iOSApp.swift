@@ -11,6 +11,8 @@ import SwiftData
 @main
 struct iOSApp: App {
     
+    @StateObject private var state: AppState = AppState()
+    
     var sharedModelContainer: ModelContainer = {
         do {
             let schema = Schema([
@@ -30,6 +32,7 @@ struct iOSApp: App {
         WindowGroup {
             AppView()
                 .modelContainer(sharedModelContainer)
+                .environmentObject(state)
         }
     }
 }

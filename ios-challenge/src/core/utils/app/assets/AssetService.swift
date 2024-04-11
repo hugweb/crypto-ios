@@ -8,7 +8,7 @@
 import Foundation
 
 protocol AssetServiceProtocol: ApiProtocol {
-
+    
     func getAssets() async throws -> [Asset]
 }
 

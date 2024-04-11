@@ -10,11 +10,12 @@ import SwiftData
 
 @MainActor
 class AssetListModel: ObservableObject {
-        
+    
     @Published var assets = [Asset]()
     @Published var error: AppError? = nil
     @Published var purchaseSheet = false
     @Published var selectedAsset: Asset?
+    @Published var loading: Bool = false
     
     private let service: AssetServiceProtocol
     private let context: ModelContext
@@ -25,15 +26,19 @@ class AssetListModel: ObservableObject {
     }
 }
 
-
+// MARK: Datasource
 extension AssetListModel {
     
     func fetchAssets() {
+        loading = true
+        
         Task {
             do {
-                assets = try await service.getAssets()
+                self.assets = try await self.service.getAssets()
+                self.loading = false
             } catch {
                 self.error = AppError.failedFetchingAssets
+                self.loading = false
             }
         }
     }

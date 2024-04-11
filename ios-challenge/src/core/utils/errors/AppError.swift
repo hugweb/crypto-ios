@@ -12,7 +12,7 @@ enum AppError: LocalizedError {
     case failedFetchingTransactions
     case failedSavingTransaction
     case failedDeletingTransaction
-  
+    
     var errorDescription: String? {
         switch self {
         case .failedFetchingAssets:

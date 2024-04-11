@@ -9,7 +9,13 @@ import SwiftUI
 
 struct TransactionListRow: View {
     
+    @EnvironmentObject var state: AppState
+    
     let transaction: Transaction
+    
+    private var formatter: TransactionFormatter {
+        return TransactionFormatter(transaction: transaction)
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -17,24 +23,18 @@ struct TransactionListRow: View {
                 Text(transaction.date, style: .date)
                     .font(.footnote)
                     .fontWeight(.semibold)
-                    .foregroundStyle(Color.black.opacity(0.9))
+                    .foregroundStyle(Color.black.opacity(0.7))
                 Spacer()
                 Text(transaction.symbol)
-                    .font(.footnote)
                     .fontWeight(.semibold)
                     .foregroundStyle(Color.black.opacity(0.7))
             }
             HStack {
-                Text(transaction.humanizeValue)
-                    .font(.footnote)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(Color.black.opacity(0.7))
+                Text(formatter.price(for: state.currency))
+                    .foregroundStyle(Color.black.opacity(0.9))
                 Spacer()
-                if let humanizePrice = transaction.humanizePrice {
-                    Text(humanizePrice)
-                        .font(.footnote)
-                        .foregroundStyle(Color.black.opacity(0.7))
-                }
+                Text(formatter.value(for: state.currency))
+                    .foregroundStyle(Color.black.opacity(0.7))
             }
         }
     }

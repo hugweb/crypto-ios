@@ -13,7 +13,6 @@ struct TransactionList: View {
     @StateObject var model: TransactionViewModel
     
     var body: some View {
-        
         NavigationStack {
             List {
                 ForEach(model.transactions, id: \.self) { transaction in
@@ -31,10 +30,9 @@ struct TransactionList: View {
                         .font(.title)
                 }
             }
-            
-        }
-        .task {
-            model.fetchTransactions()
+            .task {
+                model.fetchTransactions()
+            }   
         }
         .errorAlert(error: $model.error) {
             model.fetchTransactions()

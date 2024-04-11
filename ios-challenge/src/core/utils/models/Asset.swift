@@ -22,10 +22,10 @@ class Asset: Identifiable, Codable {
     var changePercent24Hr: String
     var vwap24Hr: String
     
-    init(id: String, 
+    init(id: String,
          rank: String,
          symbol: String,
-         name: String, 
+         name: String,
          supply: String,
          maxSupply: String,
          marketCapUsd: String,
@@ -81,6 +81,12 @@ class Asset: Identifiable, Codable {
     }
 }
 
+extension Asset: PriceFormatable {
+    var price: Double {
+        return Double(priceUsd) ?? 0
+    }
+}
+
 extension Asset {
     
     var bullish: Bool {
@@ -89,11 +95,10 @@ extension Asset {
     
     var percentage24h: String {
         let formatter = NumberFormatter()
-        let double = formatter.number(from: changePercent24Hr)
-        return double?.doubleValue.formatted(.number.precision(.fractionLength(0...2))) ?? ""
-    }
-    
-    var currentPrice: Double? {
-        return Double(priceUsd)
+        let double = formatter.number(from: changePercent24Hr)?.doubleValue
+        guard let formatted = double?.formatted(.number.precision(.fractionLength(0...2))) else {
+            return ""
+        }
+        return "\(formatted) %"
     }
 }

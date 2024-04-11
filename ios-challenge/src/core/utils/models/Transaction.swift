@@ -16,9 +16,10 @@ class Transaction: Identifiable, Codable {
     var value: Double = 0
     var price: Double = 0
     var symbol: String = ""
+    var asset: String = ""
     
     enum CodingKeys: String, CodingKey {
-        case id, date, value, price, symbol
+        case id, date, value, price, symbol, asset
     }
     
     init() {}
@@ -30,6 +31,7 @@ class Transaction: Identifiable, Codable {
         self.value = try container.decode(Double.self, forKey: .value)
         self.price = try container.decode(Double.self, forKey: .price)
         self.symbol = try container.decode(String.self, forKey: .symbol)
+        self.asset = try container.decode(String.self, forKey: .asset)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -39,25 +41,8 @@ class Transaction: Identifiable, Codable {
         try container.encode(value, forKey: .value)
         try container.encode(price, forKey: .price)
         try container.encode(symbol, forKey: .symbol)
+        try container.encode(asset, forKey: .asset)
     }
 }
 
-extension Transaction {
-    
-    var humanizeValue: String {
-        return "\(String(describing: value.formatted(.number.precision(.fractionLength(0))))) $"
-    }
-    
-    var humanizePrice: String? {
-        let formatter = NumberFormatter()
-        formatter.maximumFractionDigits = 12
-        formatter.minimumFractionDigits = 0
-        
-        let coinValue = ((value * 1) / price)
-        guard let coinValueString = formatter.string(from: NSNumber(value: coinValue)) else {
-            return nil
-        }
-        
-        return "\(String(describing: coinValueString))"
-    }
-}
+extension Transaction: PriceFormatable {}
