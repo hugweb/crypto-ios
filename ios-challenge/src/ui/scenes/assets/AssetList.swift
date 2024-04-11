@@ -25,7 +25,7 @@ struct AssetList: View {
                     if model.loading {
                         ProgressView()
                     } else {
-                        Picker(LocalizedStringKey("Currency", selection: $state.currency) {
+                        Picker(LocalizedStringKey("Currency"), selection: $state.currency) {
                             ForEach(Currency.allCases) { currency in
                                 Image(systemName: currency.description)
                                     .resizable()

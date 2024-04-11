@@ -13,6 +13,7 @@ struct TransactionSheet: View {
         case amount
     }
     
+    @EnvironmentObject var state: AppState
     @FocusState private var field: FocusedField?
     @State private var value: Double?
     @State private var isValid: Bool = false
@@ -21,7 +22,9 @@ struct TransactionSheet: View {
     let onPurchase: (_ transaction: Transaction) -> Void
     
     private var estimatedValue: String {
-        return "~ \(value ?? 0 / asset.price)"
+        let value = value ?? 0
+        let price = asset.price * state.currency.exchangeRate
+        return "~ \(value / price)"
     }
     
     private func purchaseTransaction() {
@@ -53,10 +56,10 @@ struct TransactionSheet: View {
                             .multilineTextAlignment(.leading)
                             .focused($field, equals: .amount)
                         Spacer()
-                        Text("$")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(Color.black.opacity(0.7))
+                        Image(systemName: state.currency.description)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 10)
                         Spacer()
                     }
                 }
