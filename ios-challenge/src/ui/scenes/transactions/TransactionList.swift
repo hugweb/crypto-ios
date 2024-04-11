@@ -20,7 +20,9 @@ struct TransactionList: View {
                     TransactionListRow(transaction: transaction)
                 }
                 .onDelete { indexSet in
-                    model.deleteTransaction(indexSet)
+                    Task {
+                        await model.deleteTransaction(indexSet)
+                    }
                 }
             }
             .navigationTitle(LocalizedStringKey("Transactions"))

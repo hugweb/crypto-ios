@@ -55,17 +55,15 @@ extension TransactionViewModel {
         }
     }
     
-    func deleteTransaction(_ indexSet: IndexSet) {
+    func deleteTransaction(_ indexSet: IndexSet) async {
         for index in indexSet {
             if transactions.indices.contains(index) {
-                Task {
-                    do {
-                        let transaction = transactions[index]
-                        transactions.remove(at: index)
-                        try await dataSource.remove(transaction)
-                    } catch {
-                        self.error = AppError.failedDeletingTransaction
-                    }
+                do {
+                    let transaction = transactions[index]
+                    transactions.remove(at: index)
+                    try await dataSource.remove(transaction)
+                } catch {
+                    self.error = AppError.failedDeletingTransaction
                 }
             }
         }
