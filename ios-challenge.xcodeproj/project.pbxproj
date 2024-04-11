@@ -11,7 +11,6 @@
 		06CF18412BC68C4D00AB9081 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF18402BC68C4D00AB9081 /* AppView.swift */; };
 		06CF18432BC68C4E00AB9081 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06CF18422BC68C4E00AB9081 /* Assets.xcassets */; };
 		06CF18472BC68C4E00AB9081 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06CF18462BC68C4E00AB9081 /* Preview Assets.xcassets */; };
-		06CF18512BC68C4E00AB9081 /* ios_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF18502BC68C4E00AB9081 /* ios_challengeTests.swift */; };
 		06CF185B2BC68C4E00AB9081 /* ios_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF185A2BC68C4E00AB9081 /* ios_challengeUITests.swift */; };
 		06CF185D2BC68C4E00AB9081 /* ios_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF185C2BC68C4E00AB9081 /* ios_challengeUITestsLaunchTests.swift */; };
 		9A068FD42BC6A039004D1338 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FD32BC6A039004D1338 /* Asset.swift */; };
@@ -29,6 +28,7 @@
 		9A068FF42BC6CF1D004D1338 /* TransactionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FF32BC6CF1D004D1338 /* TransactionSheet.swift */; };
 		9A068FF62BC6D5B4004D1338 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FF52BC6D5B4004D1338 /* Transaction.swift */; };
 		9A068FF92BC6E8AF004D1338 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FF82BC6E8AF004D1338 /* DataSource.swift */; };
+		9A5BC8672BC813ED004E85AA /* PriceFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BC8662BC813ED004E85AA /* PriceFormatterTests.swift */; };
 		9A9BCC952BC7398F00695CE1 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BCC942BC7398F00695CE1 /* TransactionViewModel.swift */; };
 		9A9BCC972BC7515B00695CE1 /* TransactionListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BCC962BC7515B00695CE1 /* TransactionListRow.swift */; };
 		9A9BCC992BC7E4D300695CE1 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BCC982BC7E4D300695CE1 /* Currency.swift */; };
@@ -109,7 +109,6 @@
 		06CF18442BC68C4E00AB9081 /* ios_challenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ios_challenge.entitlements; sourceTree = "<group>"; };
 		06CF18462BC68C4E00AB9081 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		06CF184C2BC68C4E00AB9081 /* ios-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		06CF18502BC68C4E00AB9081 /* ios_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_challengeTests.swift; sourceTree = "<group>"; };
 		06CF18562BC68C4E00AB9081 /* ios-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06CF185A2BC68C4E00AB9081 /* ios_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_challengeUITests.swift; sourceTree = "<group>"; };
 		06CF185C2BC68C4E00AB9081 /* ios_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -128,6 +127,7 @@
 		9A068FF32BC6CF1D004D1338 /* TransactionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSheet.swift; sourceTree = "<group>"; };
 		9A068FF52BC6D5B4004D1338 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		9A068FF82BC6E8AF004D1338 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		9A5BC8662BC813ED004E85AA /* PriceFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFormatterTests.swift; sourceTree = "<group>"; };
 		9A9BCC942BC7398F00695CE1 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 		9A9BCC962BC7515B00695CE1 /* TransactionListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListRow.swift; sourceTree = "<group>"; };
 		9A9BCC982BC7E4D300695CE1 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -203,8 +203,8 @@
 		06CF184F2BC68C4E00AB9081 /* ios-challengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				06CF18502BC68C4E00AB9081 /* ios_challengeTests.swift */,
 				9A9BCCA12BC8106D00695CE1 /* DataSourceTests.swift */,
+				9A5BC8662BC813ED004E85AA /* PriceFormatterTests.swift */,
 			);
 			path = "ios-challengeTests";
 			sourceTree = "<group>";
@@ -550,8 +550,8 @@
 				9A9BCCB32BC8118900695CE1 /* TransactionViewModel.swift in Sources */,
 				9A9BCCB62BC8118900695CE1 /* AssetListModel.swift in Sources */,
 				9A9BCCB82BC8118900695CE1 /* iOSApp.swift in Sources */,
-				06CF18512BC68C4E00AB9081 /* ios_challengeTests.swift in Sources */,
 				9A9BCCB72BC8118900695CE1 /* AssetService.swift in Sources */,
+				9A5BC8672BC813ED004E85AA /* PriceFormatterTests.swift in Sources */,
 				9A9BCCA82BC8118900695CE1 /* TransactionFormatter.swift in Sources */,
 				9A9BCCAF2BC8118900695CE1 /* ApiEndpoint.swift in Sources */,
 			);
