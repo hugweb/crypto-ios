@@ -29,6 +29,7 @@
 		9A068FF62BC6D5B4004D1338 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FF52BC6D5B4004D1338 /* Transaction.swift */; };
 		9A068FF92BC6E8AF004D1338 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A068FF82BC6E8AF004D1338 /* DataSource.swift */; };
 		9A5BC8672BC813ED004E85AA /* PriceFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BC8662BC813ED004E85AA /* PriceFormatterTests.swift */; };
+		9A5BC8692BC81582004E85AA /* ApiManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BC8682BC81582004E85AA /* ApiManagerTests.swift */; };
 		9A9BCC952BC7398F00695CE1 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BCC942BC7398F00695CE1 /* TransactionViewModel.swift */; };
 		9A9BCC972BC7515B00695CE1 /* TransactionListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BCC962BC7515B00695CE1 /* TransactionListRow.swift */; };
 		9A9BCC992BC7E4D300695CE1 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BCC982BC7E4D300695CE1 /* Currency.swift */; };
@@ -128,6 +129,7 @@
 		9A068FF52BC6D5B4004D1338 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		9A068FF82BC6E8AF004D1338 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		9A5BC8662BC813ED004E85AA /* PriceFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFormatterTests.swift; sourceTree = "<group>"; };
+		9A5BC8682BC81582004E85AA /* ApiManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerTests.swift; sourceTree = "<group>"; };
 		9A9BCC942BC7398F00695CE1 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 		9A9BCC962BC7515B00695CE1 /* TransactionListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListRow.swift; sourceTree = "<group>"; };
 		9A9BCC982BC7E4D300695CE1 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			children = (
 				9A9BCCA12BC8106D00695CE1 /* DataSourceTests.swift */,
 				9A5BC8662BC813ED004E85AA /* PriceFormatterTests.swift */,
+				9A5BC8682BC81582004E85AA /* ApiManagerTests.swift */,
 			);
 			path = "ios-challengeTests";
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				9A9BCCB52BC8118900695CE1 /* AssetEndpoint.swift in Sources */,
 				9A9BCCAC2BC8118900695CE1 /* AppState.swift in Sources */,
 				9A9BCCA32BC8118900695CE1 /* TransactionList.swift in Sources */,
+				9A5BC8692BC81582004E85AA /* ApiManagerTests.swift in Sources */,
 				9A9BCCAD2BC8118900695CE1 /* Transaction.swift in Sources */,
 				9A9BCCB02BC8118900695CE1 /* DataSource.swift in Sources */,
 				9A9BCCAE2BC8118900695CE1 /* AppError.swift in Sources */,

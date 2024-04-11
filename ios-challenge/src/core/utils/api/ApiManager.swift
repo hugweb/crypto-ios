@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ApiError: Error {
+enum ApiError: Error, Equatable {
     case wrongRequest
     case parsingError
     case unauthorized

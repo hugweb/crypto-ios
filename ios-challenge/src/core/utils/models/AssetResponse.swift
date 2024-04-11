@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AssetResponse: Codable {
+struct AssetResponse: Codable, Equatable {
     let data: [Asset]
     let timestamp: TimeInterval
 }
