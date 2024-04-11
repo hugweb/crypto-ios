@@ -29,28 +29,23 @@ class AssetListModel: ObservableObject {
 // MARK: Datasource
 extension AssetListModel {
     
-    func fetchAssets() {
+    func fetchAssets() async {
         loading = true
-        
-        Task {
-            do {
-                self.assets = try await self.service.getAssets()
-                self.loading = false
-            } catch {
-                self.error = AppError.failedFetchingAssets
-                self.loading = false
-            }
+        do {
+            self.assets = try await service.getAssets()
+            self.loading = false
+        } catch {
+            self.error = AppError.failedFetchingAssets
+            self.loading = false
         }
     }
     
-    func addTransaction(_ transaction: Transaction) {
-        Task {
-            do {
-                let dataSource = DataSource<Transaction>(container: context.container)
-                try await dataSource.save(transaction)
-            } catch {
-                self.error = AppError.failedSavingTransaction
-            }
+    func addTransaction(_ transaction: Transaction) async {
+        do {
+            let dataSource = DataSource<Transaction>(container: context.container)
+            try await dataSource.save(transaction)
+        } catch {
+            self.error = AppError.failedSavingTransaction
         }
     }
 }

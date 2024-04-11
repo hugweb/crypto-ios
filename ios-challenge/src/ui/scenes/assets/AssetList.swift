@@ -41,7 +41,7 @@ struct AssetList: View {
                 }
             }
             .task {
-                model.fetchAssets()
+                await model.fetchAssets()
             }
         }
         .sheet(isPresented: $model.purchaseSheet) {
@@ -50,12 +50,16 @@ struct AssetList: View {
             if let asset = model.selectedAsset {
                 TransactionSheet(asset: asset) { transaction in
                     model.purchaseSheet = false
-                    model.addTransaction(transaction)
+                    Task {
+                        await model.addTransaction(transaction)
+                    }
                 }
             }
         }
         .errorAlert(error: $model.error) {
-            model.fetchAssets()
+            Task {
+                await model.fetchAssets()
+            }
         }
     }
 }

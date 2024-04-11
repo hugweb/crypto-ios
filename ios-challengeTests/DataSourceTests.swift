@@ -8,7 +8,7 @@
 import XCTest
 import SwiftData
 
-private enum ContainerForTest {
+enum ContainerForTest {
     static func temp(_ name: String, delete: Bool = true) throws -> ModelContainer {
         let url = URL.temporaryDirectory.appending(component: name)
         if delete, FileManager.default.fileExists(atPath: url.path) {

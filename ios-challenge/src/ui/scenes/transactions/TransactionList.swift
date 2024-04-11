@@ -33,11 +33,13 @@ struct TransactionList: View {
                 }
             }
             .task {
-                model.fetchTransactions()
-            }   
+                await model.fetchTransactions()
+            }
         }
         .errorAlert(error: $model.error) {
-            model.fetchTransactions()
+            Task {
+                await model.fetchTransactions()
+            }
         }
     }
 }

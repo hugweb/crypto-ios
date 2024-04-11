@@ -44,16 +44,14 @@ extension TransactionViewModel {
 // MARK: Datasource
 extension TransactionViewModel {
     
-    func fetchTransactions() {
-        Task {
-            do {
-                let fetchDescriptor = FetchDescriptor<Transaction>(
-                    sortBy: [SortDescriptor(\.date, order: .reverse)]
-                )
-                transactions = try await dataSource.fetch(fetchDescriptor: fetchDescriptor)
-            } catch {
-                self.error = AppError.failedFetchingTransactions
-            }
+    func fetchTransactions() async {
+        do {
+            let fetchDescriptor = FetchDescriptor<Transaction>(
+                sortBy: [SortDescriptor(\.date, order: .reverse)]
+            )
+            transactions = try await dataSource.fetch(fetchDescriptor: fetchDescriptor)
+        } catch {
+            self.error = AppError.failedFetchingTransactions
         }
     }
     

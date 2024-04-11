@@ -32,6 +32,8 @@
 		9A5BC8692BC81582004E85AA /* ApiManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BC8682BC81582004E85AA /* ApiManagerTests.swift */; };
 		9A5BC86B2BC81955004E85AA /* AssetServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BC86A2BC81955004E85AA /* AssetServiceTests.swift */; };
 		9A5BC86D2BC81C3A004E85AA /* HelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BC86C2BC81C3A004E85AA /* HelperTests.swift */; };
+		9A5BC86F2BC81C7D004E85AA /* AssertListModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BC86E2BC81C7D004E85AA /* AssertListModelTests.swift */; };
+		9A5BC8712BC81CB2004E85AA /* TransactionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BC8702BC81CB2004E85AA /* TransactionViewModelTests.swift */; };
 		9A9BCC952BC7398F00695CE1 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BCC942BC7398F00695CE1 /* TransactionViewModel.swift */; };
 		9A9BCC972BC7515B00695CE1 /* TransactionListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BCC962BC7515B00695CE1 /* TransactionListRow.swift */; };
 		9A9BCC992BC7E4D300695CE1 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BCC982BC7E4D300695CE1 /* Currency.swift */; };
@@ -134,6 +136,8 @@
 		9A5BC8682BC81582004E85AA /* ApiManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerTests.swift; sourceTree = "<group>"; };
 		9A5BC86A2BC81955004E85AA /* AssetServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetServiceTests.swift; sourceTree = "<group>"; };
 		9A5BC86C2BC81C3A004E85AA /* HelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperTests.swift; sourceTree = "<group>"; };
+		9A5BC86E2BC81C7D004E85AA /* AssertListModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertListModelTests.swift; sourceTree = "<group>"; };
+		9A5BC8702BC81CB2004E85AA /* TransactionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModelTests.swift; sourceTree = "<group>"; };
 		9A9BCC942BC7398F00695CE1 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 		9A9BCC962BC7515B00695CE1 /* TransactionListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListRow.swift; sourceTree = "<group>"; };
 		9A9BCC982BC7E4D300695CE1 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 				9A5BC8682BC81582004E85AA /* ApiManagerTests.swift */,
 				9A5BC86A2BC81955004E85AA /* AssetServiceTests.swift */,
 				9A5BC86C2BC81C3A004E85AA /* HelperTests.swift */,
+				9A5BC86E2BC81C7D004E85AA /* AssertListModelTests.swift */,
+				9A5BC8702BC81CB2004E85AA /* TransactionViewModelTests.swift */,
 			);
 			path = "ios-challengeTests";
 			sourceTree = "<group>";
@@ -551,9 +557,11 @@
 				9A9BCCB02BC8118900695CE1 /* DataSource.swift in Sources */,
 				9A9BCCAE2BC8118900695CE1 /* AppError.swift in Sources */,
 				9A9BCCB12BC8118900695CE1 /* PriceFormatter.swift in Sources */,
+				9A5BC86F2BC81C7D004E85AA /* AssertListModelTests.swift in Sources */,
 				9A9BCCA52BC8118900695CE1 /* TransactionListRow.swift in Sources */,
 				9A9BCCAA2BC8118900695CE1 /* AssetResponse.swift in Sources */,
 				9A9BCCB42BC8118900695CE1 /* ApiManager.swift in Sources */,
+				9A5BC8712BC81CB2004E85AA /* TransactionViewModelTests.swift in Sources */,
 				9A9BCCAB2BC8118900695CE1 /* Currency.swift in Sources */,
 				9A9BCCA72BC8118900695CE1 /* AssetListRow.swift in Sources */,
 				9A9BCCA62BC8118900695CE1 /* AssetList.swift in Sources */,
