@@ -26,12 +26,18 @@ class TransactionViewModel: ObservableObject {
 // MARK: Properties
 extension TransactionViewModel {
     
-    var totalTransationsValue: String {
-        let value = transactions.map { $0.value }.reduce(0, +)
-        guard value > 0 else {
+    func totalTransationsValue(for currency: Currency) -> String {
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.maximumFractionDigits = 2
+        currencyFormatter.minimumFractionDigits = 0
+        
+        let usdValue = transactions.map { $0.value }.reduce(0, +)
+        let value = usdValue * currency.exchangeRate
+        guard value > 0, let formatted = currencyFormatter.string(for: value) else {
             return ""
         }
-        return "\(value.formatted(.number.precision(.fractionLength(0)))) $"
+        return formatted
     }
 }
 

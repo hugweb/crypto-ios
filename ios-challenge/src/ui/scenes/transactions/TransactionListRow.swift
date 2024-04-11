@@ -23,7 +23,7 @@ struct TransactionListRow: View {
                 Text(transaction.date, style: .date)
                     .font(.footnote)
                     .fontWeight(.semibold)
-                    .foregroundStyle(Color.black.opacity(0.7))
+                    .foregroundStyle(Color.black.opacity(0.5))
                 Spacer()
                 Text(transaction.symbol)
                     .fontWeight(.semibold)
@@ -31,9 +31,11 @@ struct TransactionListRow: View {
             }
             HStack {
                 Text(formatter.price(for: state.currency))
-                    .foregroundStyle(Color.black.opacity(0.9))
+                    .fontWeight(.semibold)
+                    .foregroundStyle(Color.black.opacity(0.7))
                 Spacer()
                 Text(formatter.value(for: state.currency))
+                    .font(.footnote)
                     .foregroundStyle(Color.black.opacity(0.7))
             }
         }

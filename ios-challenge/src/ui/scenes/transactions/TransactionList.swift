@@ -10,6 +10,7 @@ import SwiftData
 
 struct TransactionList: View {
     
+    @EnvironmentObject var state: AppState
     @StateObject var model: TransactionViewModel
     
     var body: some View {
@@ -26,8 +27,9 @@ struct TransactionList: View {
             .animation(.spring(), value: model.transactions)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Text(model.totalTransationsValue)
+                    Text(model.totalTransationsValue(for: state.currency))
                         .font(.title)
+                        .foregroundStyle(Color.black.opacity(0.7))
                 }
             }
             .task {
