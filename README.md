@@ -1,3 +1,10 @@
+# Showcase
+
+
+https://github.com/hugweb/crypto-ios/assets/38917218/9306a366-eca4-4817-be87-d0951fbfc5ba
+
+
+
 # Introduction
 Welcome to EtherMail's code challenge project. This repository contains an iOS application with some basic functionality
 to support the development of the code test required during the hiring process for an iOS developer in EtherMail.
