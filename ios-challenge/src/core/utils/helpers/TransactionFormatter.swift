@@ -32,7 +32,7 @@ struct TransactionFormatter {
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 12
         
-        let assetValue = ((transaction.value * 1) / transaction.price)
+        let assetValue = transaction.value / transaction.price
         guard let formattedValue = formatter.string(for: assetValue) else {
             return ""
         }

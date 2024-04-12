@@ -1,5 +1,5 @@
 //
-//  AssetListSheet.swift
+//  TransactionPurchase.swift
 //  ios-challenge
 //
 //  Created by Hugues Blocher on 10/4/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TransactionSheet: View {
+struct TransactionPurchase: View {
     
     enum FocusedField {
         case amount
@@ -24,7 +24,7 @@ struct TransactionSheet: View {
     private var estimatedValue: String {
         let value = value ?? 0
         let price = asset.price * state.currency.exchangeRate
-        return "~ \(value / price)"
+        return "\(value / price)"
     }
     
     private func purchaseTransaction() {
@@ -38,8 +38,7 @@ struct TransactionSheet: View {
     }
     
     var body: some View {
-        VStack {
-            Spacer()
+        NavigationStack {
             Form {
                 Section(LocalizedStringKey("Asset")) {
                     Text(asset.name)
@@ -60,11 +59,12 @@ struct TransactionSheet: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 10)
+                            .foregroundStyle(Color.black.opacity(0.7))
                         Spacer()
                     }
                 }
                 
-                Section(LocalizedStringKey("Estimated value")) {
+                Section(LocalizedStringKey("Estimated value ~")) {
                     HStack {
                         Text(estimatedValue)
                             .font(.body)
@@ -72,28 +72,30 @@ struct TransactionSheet: View {
                             .foregroundStyle(Color.black.opacity(0.5))
                         Spacer()
                         Text("\(asset.symbol)")
-                            .font(.footnote)
+                            .font(.body)
                             .fontWeight(.semibold)
                             .foregroundStyle(Color.black.opacity(0.7))
                     }
                 }
-                
-                Section {
-                    Button(action: {
-                        purchaseTransaction()
-                    }, label: {
-                        Text(LocalizedStringKey("PURCHASE"))
-                            .font(.footnote)
-                            .padding(10)
-                            .cornerRadius(5)
-                    })
-                    .frame(maxWidth: .infinity)
-                    .buttonStyle(.borderedProminent)
-                    .disabled(!isValid)
+                if isValid {
+                    Section {
+                        Button(action: {
+                            purchaseTransaction()
+                        }, label: {
+                            Text(LocalizedStringKey("PURCHASE"))
+                                .font(.footnote)
+                                .padding(10)
+                                .cornerRadius(5)
+                        })
+                        .frame(maxWidth: .infinity)
+                        .buttonStyle(.borderedProminent)
+                        .disabled(!isValid)
+                    }
+                    .listRowBackground(Color.clear)
                 }
-                .listRowBackground(Color.clear)
+                
             }
-            
+            .navigationTitle(LocalizedStringKey("Buy"))
         }
         .presentationDragIndicator(.hidden)
         .onAppear {

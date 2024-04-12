@@ -48,7 +48,7 @@ struct AssetList: View {
             model.selectedAsset = nil
         } content: {
             if let asset = model.selectedAsset {
-                TransactionSheet(asset: asset) { transaction in
+                TransactionPurchase(asset: asset) { transaction in
                     model.purchaseSheet = false
                     Task {
                         await model.addTransaction(transaction)

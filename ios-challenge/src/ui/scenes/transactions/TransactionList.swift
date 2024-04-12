@@ -31,6 +31,7 @@ struct TransactionList: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Text(model.totalTransationsValue(for: state.currency))
                         .font(.title)
+                        .fontWeight(.bold)
                         .foregroundStyle(Color.black.opacity(0.7))
                 }
             }

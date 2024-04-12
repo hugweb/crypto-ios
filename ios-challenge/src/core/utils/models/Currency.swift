@@ -32,7 +32,7 @@ enum Currency: Identifiable, CaseIterable, CustomStringConvertible {
         }
     }
     
-    //TODO: hardcoded rates for testing purpose
+    //FIXME: hardcoded rates for testing purpose
     var exchangeRate: Double {
         switch self {
         case .dollar:

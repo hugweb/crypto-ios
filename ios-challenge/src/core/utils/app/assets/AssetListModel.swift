@@ -14,8 +14,8 @@ class AssetListModel: ObservableObject {
     @Published var assets = [Asset]()
     @Published var error: AppError? = nil
     @Published var purchaseSheet = false
-    @Published var selectedAsset: Asset?
     @Published var loading: Bool = false
+    @Published var selectedAsset: Asset?
     
     private let service: AssetServiceProtocol
     private let context: ModelContext
@@ -32,11 +32,11 @@ extension AssetListModel {
     func fetchAssets() async {
         loading = true
         do {
-            self.assets = try await service.getAssets()
-            self.loading = false
+            assets = try await service.getAssets()
+            loading = false
         } catch {
             self.error = AppError.failedFetchingAssets
-            self.loading = false
+            loading = false
         }
     }
     
