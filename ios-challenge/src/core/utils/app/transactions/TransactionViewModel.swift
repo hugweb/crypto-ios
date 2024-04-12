@@ -29,6 +29,7 @@ extension TransactionViewModel {
     func totalTransationsValue(for currency: Currency) -> String {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.numberStyle = .currency
+        currencyFormatter.currencyCode = currency.code
         currencyFormatter.maximumFractionDigits = 2
         currencyFormatter.minimumFractionDigits = 0
         
